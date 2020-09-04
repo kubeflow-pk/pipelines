@@ -12,8 +12,7 @@ WORKDIR ./src
 COPY . .
 
 WORKDIR ./frontend
-RUN git config --global http.postBuffer 2000000000
-RUN npm ci && npm run postinstall
+RUN npm ci
 RUN npm run build
 
 RUN mkdir -p ./server/dist && \
